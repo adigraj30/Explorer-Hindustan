@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Explorer - Hindustan"
-run/main_scene="res://World.tscn"
+run/main_scene="res://World_.tscn"
 config/icon="res://icon.png"
 
 [display]
