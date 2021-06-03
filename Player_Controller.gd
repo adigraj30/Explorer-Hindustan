@@ -9,7 +9,7 @@ var velocity = Vector2.ZERO
 export (float,0,1,0) var friction = 0.1
 export (float,0,1,0) var acceleration = 0.25
 
-enum state {IDLE, RUNNING, SLIDING, JUMP, FALL}
+enum state {IDLE, RUNNING, SLIDING, JUMP, FALL, ATTACK}
 
 var player_state = state.IDLE
 
@@ -21,24 +21,46 @@ func get_input():
 	else:
 		velocity.x = lerp(velocity.x, 0, friction)
 		
+
+func update_animation():
+	if velocity.x < 0 :
+		$Sprite.flip_h = true
+	if velocity.x > 0 :
+		$Sprite.flip_h = false
+	match(player_state):
+		state.IDLE:
+			$AnimationPlayer.play("Idle")
+		state.RUNNING:
+			$AnimationPlayer.play("Running")
+			yield($AnimationPlayer, "animation_finished")
+			player_state = state.IDLE
+		state.SLIDING:
+			$AnimationPlayer.play("Sliding")
+		state.JUMP:
+			$AnimationPlayer.play("Jump")
+		state.FALL:
+			$AnimationPlayer.play("Fall")
+
+
 		
 func _physics_process(delta):
-	if player_state != state.ROLLING and player_state != state.ATTACK:
+	if player_state != state.SLIDING and player_state != state.ATTACK:
 		get_input()
 		
 		print(velocity)
 		
-		if velocity.x == 0:
+		if -20 <= velocity.x and velocity.x <= 20:
+			velocity.x = 0
 			player_state = state.IDLE
 		elif velocity.x != 0 and Input.is_action_just_pressed("ui_down"):
-			player_state = state.ROLLING	
+			player_state = state.SLIDING	
 		elif velocity.x != 0:
 			player_state = state.RUNNING
 		
-		if is_on_floor() and player_state != state.ROLLING:
+		if is_on_floor() and player_state != state.SLIDING:
 			if Input.is_action_just_pressed("ui_up"):
 				velocity.y = jump_speed
-				player.state = state.JUMP
+				player_state = state.JUMP
 				
 				###
 				#ADD ATTACK
@@ -50,6 +72,12 @@ func _physics_process(delta):
 		else:
 			player_state = state.FALL
 			
+			
+	
+	velocity.y += gravity * delta #adds gravity
+	velocity = move_and_slide(velocity, Vector2.UP)
+	
+	update_animation()
 		
 		
 	
