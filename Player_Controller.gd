@@ -6,8 +6,8 @@ export (int) var gravity = 400
 
 var velocity = Vector2.ZERO
 
-export (float,0,1,0) var friction = 0.1
-export (float,0,1,0) var acceleration = 0.25
+export (float,0,1,0) var friction = 10
+export (float,0,1,0) var acceleration = 25
 
 enum state {IDLE, RUNNING, SLIDING, JUMP, FALL, ATTACK}
 
@@ -17,9 +17,12 @@ func get_input():
 	var dir = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	
 	if dir != 0:
-		velocity.x = lerp(velocity.x, dir * speed, acceleration)
+		velocity.x = move_toward(velocity.x, dir * speed, acceleration)
+		
+		
 	else:
-		velocity.x = lerp(velocity.x, 0, friction)
+		
+		velocity.x = move_toward(velocity.x, 0, friction)
 		
 
 func update_animation():
@@ -31,15 +34,19 @@ func update_animation():
 		state.IDLE:
 			$AnimationPlayer.play("Idle")
 		state.RUNNING:
-			$AnimationPlayer.play("Running")
-			yield($AnimationPlayer, "animation_finished")
-			player_state = state.IDLE
+			$AnimationPlayer.play("Running")		
 		state.SLIDING:
 			$AnimationPlayer.play("Sliding")
+			yield($AnimationPlayer, "animation_finished")
+			player_state = state.IDLE	
 		state.JUMP:
 			$AnimationPlayer.play("Jump")
 		state.FALL:
 			$AnimationPlayer.play("Fall")
+		state.ATTACK:
+			$AnimationPlayer.play("Attack")
+			yield($AnimationPlayer, "animation_finished")
+			player_state = state.IDLE	
 
 
 		
@@ -49,11 +56,12 @@ func _physics_process(delta):
 		
 		print(velocity)
 		
-		if -20 <= velocity.x and velocity.x <= 20:
+		if velocity.x == 0:
 			velocity.x = 0
 			player_state = state.IDLE
 		elif velocity.x != 0 and Input.is_action_just_pressed("ui_down"):
 			player_state = state.SLIDING	
+			velocity.x *= 2 
 		elif velocity.x != 0:
 			player_state = state.RUNNING
 		
@@ -62,6 +70,9 @@ func _physics_process(delta):
 				velocity.y = jump_speed
 				player_state = state.JUMP
 				
+			if Input.is_action_just_pressed("attack"):
+				player_state = state.ATTACK 
+		
 				###
 				#ADD ATTACK
 				####
@@ -72,7 +83,13 @@ func _physics_process(delta):
 		else:
 			player_state = state.FALL
 			
-			
+	
+	
+	if player_state == state.ATTACK:
+		velocity.x = move_toward(velocity.x, 0, friction)	
+	
+	if Input.is_action_just_released("attack"):
+		player_state = state.IDLE
 	
 	velocity.y += gravity * delta #adds gravity
 	velocity = move_and_slide(velocity, Vector2.UP)
