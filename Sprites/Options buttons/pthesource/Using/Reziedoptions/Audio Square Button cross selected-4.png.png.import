@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Options Button_selected.png.png-de402748398fce05c27a70ae60a3f29a.stex"
+path="res://.import/Audio Square Button cross selected-4.png.png-ede848c0d16009a080d08af6a9ca20f1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/Options Button_selected.png.png"
-dest_files=[ "res://.import/Options Button_selected.png.png-de402748398fce05c27a70ae60a3f29a.stex" ]
+source_file="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/Audio Square Button cross selected-4.png.png"
+dest_files=[ "res://.import/Audio Square Button cross selected-4.png.png-ede848c0d16009a080d08af6a9ca20f1.stex" ]
 
 [params]
 

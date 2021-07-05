@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Start Buttonselected.png-1.png.png-51dfcdd3691e51637429aec777e8a33f.stex"
+path="res://.import/minimise selected.png-8a4a8eb7b97dc61fc4710e179bd63d1e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/Start Buttonselected.png-1.png.png"
-dest_files=[ "res://.import/Start Buttonselected.png-1.png.png-51dfcdd3691e51637429aec777e8a33f.stex" ]
+source_file="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/minimise selected.png"
+dest_files=[ "res://.import/minimise selected.png-8a4a8eb7b97dc61fc4710e179bd63d1e.stex" ]
 
 [params]
 

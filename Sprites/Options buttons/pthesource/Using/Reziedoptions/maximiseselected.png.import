@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/balck.jpg-cadb5c20e3637c50bb6e5a98de682cda.stex"
+path="res://.import/maximiseselected.png-2afcc4c0ada8d60913774f47e8715f8b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://balck.jpg"
-dest_files=[ "res://.import/balck.jpg-cadb5c20e3637c50bb6e5a98de682cda.stex" ]
+source_file="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/maximiseselected.png"
+dest_files=[ "res://.import/maximiseselected.png-2afcc4c0ada8d60913774f47e8715f8b.stex" ]
 
 [params]
 

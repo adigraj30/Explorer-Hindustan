@@ -10,7 +10,6 @@
 [ext_resource path="res://Sprites/Background items/vase.jpg" type="Texture" id=8]
 [ext_resource path="res://Sprites/Background items/vase-1.png.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Background items/vase_for_game 16X16.png" type="Texture" id=10]
-[ext_resource path="res://abstract-black-background-plurality-squares-260nw-220299187.jpg" type="Texture" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -152,6 +151,9 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=47]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="StreamTexture" id=142]
+load_path = "res://.import/abstract-black-background-plurality-squares-260nw-220299187.jpg-4aa4003f89be066f092bf61d3dce943c.stex"
 
 [sub_resource type="ConvexPolygonShape2D" id=48]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1476,7 +1478,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 10/shapes = [  ]
 10/z_index = 0
 11/name = "abstract-black-background-plurality-squares-260nw-220299187.jpg 11"
-11/texture = ExtResource( 11 )
+11/texture = SubResource( 142 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 0, 0, 32, 32 )

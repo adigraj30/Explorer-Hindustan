@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Options Button-1.png (1).png-c726ae3c874dc4cb12594d4de6e65b2e.stex"
+path="res://.import/maximise.png-df163f5a5321f6a040278b6c277b807f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/Options Button-1.png (1).png"
-dest_files=[ "res://.import/Options Button-1.png (1).png-c726ae3c874dc4cb12594d4de6e65b2e.stex" ]
+source_file="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/maximise.png"
+dest_files=[ "res://.import/maximise.png-df163f5a5321f6a040278b6c277b807f.stex" ]
 
 [params]
 
