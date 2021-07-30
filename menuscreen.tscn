@@ -1,15 +1,15 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/Start Button-1.png (1).png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/options button.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/worldnowords.jpg" type="Texture" id=2]
-[ext_resource path="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/Start Buttonselected.png-1.png.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/Options Button-1.png (1).png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/Options Button_selected.png.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/options button selected.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/start button.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/start button selected.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/Back Square Button-1.png.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/Back Square Button_selected.png.png" type="Texture" id=7]
 [ext_resource path="res://menuscreen.gd" type="Script" id=8]
 
-[node name="menuscreen" type="Node"]
+[node name="menuscreen" type="Node2D"]
 script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -23,10 +23,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -99.5546
-margin_top = -84.2272
-margin_right = 100.445
-margin_bottom = 30.7728
+margin_left = -100.0
+margin_top = -69.0
+margin_right = 100.0
+margin_bottom = 69.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -34,15 +34,15 @@ __meta__ = {
 [node name="TextureButton" type="TextureButton" parent="Sprite/CanvasLayer/VBoxContainer"]
 margin_right = 200.0
 margin_bottom = 66.0
-texture_normal = ExtResource( 1 )
-texture_hover = ExtResource( 3 )
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
 
 [node name="TextureButton2" type="TextureButton" parent="Sprite/CanvasLayer/VBoxContainer"]
 margin_top = 70.0
 margin_right = 200.0
 margin_bottom = 138.0
-texture_normal = ExtResource( 4 )
-texture_hover = ExtResource( 5 )
+texture_normal = ExtResource( 1 )
+texture_hover = ExtResource( 3 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Sprite/CanvasLayer"]
 margin_left = 5.0
