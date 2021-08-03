@@ -8,23 +8,31 @@ var velocity = Vector2(0,0)
 
 var direction = 1
 
+var is_dead = false 
 
 func _ready():
 	pass # Replace with function body.
+	
+func dead():
+	is_dead = true
+	velocity = Vector2(0,0)
+	$AminationPlayer.play("Dead")
 
 
 func _physics_process(delta):
 	velocity.x = SPEED * direction
 	$AnimationPlayer.play("Walk")
 	
+	if is_dead == false :
 	
-	if direction == 1:
-		$Sprite.flip_h = false
-	else:
-		$Sprite.flip_h = true
 	
-	velocity.y += GRAVITY
-	velocity = move_and_slide(velocity, FLOOR)
+		if direction == 1:
+			$Sprite.flip_h = false
+		else:
+			$Sprite.flip_h = true
+		
+		velocity.y += GRAVITY
+		velocity = move_and_slide(velocity, FLOOR)
 	
 	
 	if is_on_wall():

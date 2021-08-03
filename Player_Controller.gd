@@ -28,8 +28,10 @@ func get_input():
 func update_animation():
 	if velocity.x < 0 :
 		$Sprite.flip_h = true
+		
 	if velocity.x > 0 :
 		$Sprite.flip_h = false
+		
 	match(player_state):
 		state.IDLE:
 			$AnimationPlayer.play("Idle")
@@ -47,6 +49,8 @@ func update_animation():
 			$AnimationPlayer.play("Attack")
 			yield($AnimationPlayer, "animation_finished")
 			player_state = state.IDLE	
+			$Sprite.x = 1
+			$Sprite.scale.x = -1
 
 
 		
@@ -90,6 +94,9 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_released("attack"):
 		player_state = state.IDLE
+		
+	#if Input.is_action_pressed("attack"):
+		#player_state = state.IDLE
 	
 	velocity.y += gravity * delta #adds gravity
 	velocity = move_and_slide(velocity, Vector2.UP)
@@ -100,4 +107,17 @@ func _physics_process(delta):
 	
 		
 		
+	
+
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("Monkey"):
+		$AnimationPlayer.play("Dead")
+
+
+func _on_SwordAttack_area_entered(area):
+	if area.is_in_group("hurtbox"):
+		area.take_damage()
+		
+	
 	
