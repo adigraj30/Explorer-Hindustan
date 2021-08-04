@@ -42,3 +42,6 @@ func _physics_process(delta):
 			motion.x = lerp(motion.x, 0, AIR_RESISTANCE * delta)
 	
 	motion = move_and_slide(motion, Vector2.UP)
+
+
+	

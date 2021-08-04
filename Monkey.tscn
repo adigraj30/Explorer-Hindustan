@@ -9,6 +9,7 @@ extents = Vector2( 5.24992, 8.0712 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Dead"
+length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite/Monkey_dead:frame")
 tracks/0/interp = 1

@@ -16,14 +16,16 @@ func _ready():
 func dead():
 	is_dead = true
 	velocity = Vector2(0,0)
-	$AminationPlayer.play("Dead")
+	$AnimationPlayer.play("Dead")
 
 
 func _physics_process(delta):
-	velocity.x = SPEED * direction
-	$AnimationPlayer.play("Walk")
 	
 	if is_dead == false :
+	
+		velocity.x = SPEED * direction
+		$AnimationPlayer.play("Walk")
+	
 	
 	
 		if direction == 1:

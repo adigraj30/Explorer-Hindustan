@@ -28,10 +28,11 @@ func get_input():
 func update_animation():
 	if velocity.x < 0 :
 		$Sprite.flip_h = true
+		$Sprite/SwordAttack/CollisionShape2D.position.x = -16
 		
 	if velocity.x > 0 :
 		$Sprite.flip_h = false
-		
+		$Sprite/SwordAttack/CollisionShape2D.position.x = 16
 	match(player_state):
 		state.IDLE:
 			$AnimationPlayer.play("Idle")
@@ -49,8 +50,7 @@ func update_animation():
 			$AnimationPlayer.play("Attack")
 			yield($AnimationPlayer, "animation_finished")
 			player_state = state.IDLE	
-			$Sprite.x = 1
-			$Sprite.scale.x = -1
+			
 
 
 		
