@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MOKEEY spritesheet.png-dabdc0aa9af2654d00bf608b6d79539c.stex"
+path="res://.import/monkey (1).png-cf90706bb2e7afd663c1489be4d96b06.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/MOKEEY spritesheet.png"
-dest_files=[ "res://.import/MOKEEY spritesheet.png-dabdc0aa9af2654d00bf608b6d79539c.stex" ]
+source_file="res://Sprites/Characters/monkey (1).png"
+dest_files=[ "res://.import/monkey (1).png-cf90706bb2e7afd663c1489be4d96b06.stex" ]
 
 [params]
 

@@ -10,13 +10,26 @@ var direction = 1
 
 var is_dead = false 
 
+export (int) var health := 30 #using export var so it can be easily be changed in the editor
+
 func _ready():
 	pass # Replace with function body.
 	
-func dead():
-	is_dead = true
-	velocity = Vector2(0,0)
-	$AnimationPlayer.play("Dead")
+#func dead():
+#	is_dead = true
+#	velocity = Vector2(0,0)
+#	$AnimationPlayer.play("Dead")
+
+func handle_hit(damage: int ):
+	health -= damage
+	if health <= 0:
+		is_dead = true
+		$AnimationPlayer.play("Dead")
+		yield($AnimationPlayer,"animation_finished")
+		queue_free()
+	print("hit!!!, curent health " + str(health))
+	
+	
 
 
 func _physics_process(delta):

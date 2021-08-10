@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Player_Controller.gd" type="Script" id=1]
 [ext_resource path="res://SwordAttack.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/adventurer-Sheet blue.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Characters/adventurer-Sheet blue.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 11 )
@@ -256,4 +256,4 @@ position = Vector2( -18, 0 )
 current = true
 smoothing_enabled = true
 
-[connection signal="area_entered" from="Sprite/SwordAttack" to="." method="_on_SwordAttack_area_entered"]
+[connection signal="body_entered" from="Sprite/SwordAttack" to="Sprite/SwordAttack" method="_on_SwordAttack_body_entered"]

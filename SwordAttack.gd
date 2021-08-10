@@ -1,13 +1,14 @@
 extends Area2D
 
-func _physics_process(delta):
-	var bodies = get_overlapping_bodies()
-	for body in bodies:
-		if body.name == "Monkey":
-			$AnimationPlayer.play("Dead")
+export (int) var damage:= 10
 
 
 
 
 func _ready():
 	pass 
+
+
+func _on_SwordAttack_body_entered(body):
+	if body.has_method("handle_hit"):
+		body.handle_hit(damage)

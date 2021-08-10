@@ -7,7 +7,7 @@
 [ext_resource path="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/start button selected.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/Back Square Button-1.png.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Options buttons/pthesource/Using/Reziedoptions/Back Square Button_selected.png.png" type="Texture" id=7]
-[ext_resource path="res://menuscreen.gd" type="Script" id=8]
+[ext_resource path="res://Worlds/menuscreen.gd" type="Script" id=8]
 
 [node name="menuscreen" type="Node2D"]
 script = ExtResource( 8 )

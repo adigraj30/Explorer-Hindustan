@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/monkey (1).png-799d6b8302c230d8b9271e1bcf155cd1.stex"
+path="res://.import/adventurer-Sheet blue.png-f27b76267230bf0a007a1f1fc40e5bb3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/monkey (1).png"
-dest_files=[ "res://.import/monkey (1).png-799d6b8302c230d8b9271e1bcf155cd1.stex" ]
+source_file="res://Sprites/Characters/adventurer-Sheet blue.png"
+dest_files=[ "res://.import/adventurer-Sheet blue.png-f27b76267230bf0a007a1f1fc40e5bb3.stex" ]
 
 [params]
 
