@@ -27,7 +27,13 @@ func handle_hit(damage: int ):
 		$AnimationPlayer.play("Dead")
 		yield($AnimationPlayer,"animation_finished")
 		queue_free()
-	print("hit!!!, curent health " + str(health))
+	
+	else:
+		is_dead = false
+		$AnimationPlayer.play("Walk")
+	print("hit!!!, enemy health: " + str(health)) #just so I know that it's working
+	
+	
 	
 	
 
