@@ -14,6 +14,6 @@ func _physics_process(delta):
 
 
 func _on_TextureButton_pressed():
-	get_tree().change_scene("menuscreen.tscn")
+	get_tree().change_scene("res://Worlds/menuscreen.tscn")
 
 	
