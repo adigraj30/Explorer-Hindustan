@@ -1,0 +1,21 @@
+[gd_scene format=2]
+
+[node name="Door and Button 1" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Button" type="Sprite" parent="."]
+
+[node name="Button" type="StaticBody2D" parent="Button"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Button"]
+
+[node name="Area2D" type="Area2D" parent="Button"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Area2D"]
+
+[node name="Door" type="Sprite" parent="."]
+
+[node name="Door" type="StaticBody2D" parent="Door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Door"]
