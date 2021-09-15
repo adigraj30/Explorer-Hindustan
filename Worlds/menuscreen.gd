@@ -20,5 +20,5 @@ func _on_TextureButton3_pressed():
 
 
 func _on_TextureButton_pressed():
-	get_tree().change_scene_to(load("res://WRLD_START.tscn"))
+	get_tree().change_scene_to(load("res://Worlds/WRLD_START.tscn"))
 	

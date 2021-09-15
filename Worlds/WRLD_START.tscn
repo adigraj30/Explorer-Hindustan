@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Sprites/Assets/Background items/Grassy_Mountains_Parallax_Background-vnitti/layers/clouds_front_t.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Assets/Background items/Grassy_Mountains_Parallax_Background-vnitti/layers/hill.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Assets/Background items/Grassy_Mountains_Parallax_Background-vnitti/layers/sky.png" type="Texture" id=13]
+[ext_resource path="res://SpikeTrap.tscn" type="PackedScene" id=14]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 13.3849
@@ -127,3 +128,10 @@ shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 23.6953, 49.1923 )
+
+[node name="Area2D" parent="." instance=ExtResource( 14 )]
+position = Vector2( 121, 379 )
+rotation = -3.13932
+
+[node name="Area2D" parent="Area2D" instance=ExtResource( 14 )]
+position = Vector2( 17, -3.05176e-05 )
