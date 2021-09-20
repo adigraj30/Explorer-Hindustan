@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player_Controller.gd" type="Script" id=1]
 [ext_resource path="res://SwordAttack.gd" type="Script" id=2]
@@ -63,6 +63,23 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id=4]
+resource_name = "Death"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 65, 65, 66, 67, 68 ]
+}
+
+[sub_resource type="Animation" id=5]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -77,7 +94,7 @@ tracks/0/keys = {
 "values": [ 22 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.7
 loop = true
 tracks/0/type = "value"
@@ -129,7 +146,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -144,7 +161,7 @@ tracks/0/keys = {
 "values": [ 16 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -184,7 +201,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 6 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -223,6 +240,10 @@ tracks/2/keys = {
 "values": [ Vector2( 7, 6 ), Vector2( 7, 11 ) ]
 }
 
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 6.0
+height = 12.0
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -234,7 +255,7 @@ shape = SubResource( 1 )
 texture = ExtResource( 3 )
 hframes = 7
 vframes = 11
-frame = 43
+frame = 3
 
 [node name="SwordAttack" type="Area2D" parent="Sprite"]
 script = ExtResource( 2 )
@@ -247,15 +268,23 @@ disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Attack = SubResource( 3 )
-anims/Fall = SubResource( 4 )
-anims/Idle = SubResource( 5 )
-anims/Jump = SubResource( 6 )
-anims/Running = SubResource( 7 )
-anims/Sliding = SubResource( 8 )
+anims/Death = SubResource( 4 )
+anims/Fall = SubResource( 5 )
+anims/Idle = SubResource( 6 )
+anims/Jump = SubResource( 7 )
+anims/Running = SubResource( 8 )
+anims/Sliding = SubResource( 9 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -18, 0 )
 current = true
 smoothing_enabled = true
 
+[node name="DeathZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2( 0, 4 )
+shape = SubResource( 10 )
+
 [connection signal="body_entered" from="Sprite/SwordAttack" to="Sprite/SwordAttack" method="_on_SwordAttack_body_entered"]
+[connection signal="area_entered" from="DeathZone" to="." method="_on_DeathZone_area_entered"]

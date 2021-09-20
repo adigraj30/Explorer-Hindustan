@@ -10,7 +10,7 @@ var velocity = Vector2.ZERO
 export (float,0,1,0) var friction = 10
 export (float,0,1,0) var acceleration = 25
 
-enum state {IDLE, RUNNING, SLIDING, JUMP, FALL, ATTACK}
+enum state {IDLE, RUNNING, SLIDING, JUMP, FALL, ATTACK, DEATH}
 
 var player_state = state.IDLE
 
@@ -122,3 +122,8 @@ func _on_SwordAttack_area_entered(area):
 		
 	
 	
+
+
+#func _on_DeathZone_area_entered(area):
+	#if area.is_in_group("Deadly"):
+		

@@ -126,8 +126,10 @@ texture = ExtResource( 6 )
 position = Vector2( 0, 11.3589 )
 shape = SubResource( 1 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 23.6953, 49.1923 )
+[node name="Player" parent="." groups=[
+"Player",
+] instance=ExtResource( 2 )]
+position = Vector2( 50, 365 )
 
 [node name="Area2D" parent="." instance=ExtResource( 14 )]
 position = Vector2( 121, 379 )
