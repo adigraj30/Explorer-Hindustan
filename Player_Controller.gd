@@ -124,6 +124,27 @@ func _on_SwordAttack_area_entered(area):
 	
 
 
+
 #func _on_DeathZone_area_entered(area):
 	#if area.is_in_group("Deadly"):
+		
+
+
+func _on_DeathZone_body_entered(body):
+	print("entered")
+	if body.is_in_group("Monkey") or body.is_in_group("SpikeTrap"):
+		set_physics_process(false)
+		$AnimationPlayer.play("Death")
+		yield($AnimationPlayer,"animation_finished") 
+		#I CAN ADD LIFE REDUCTION HERE
+		get_tree().change_scene("res://Worlds/GameOver.tscn")
+		
+
+#func _on_DeathZone_body_entered(body):
+	#if body.is_in_group("SpikeTrap"):
+		#set_physics_process(false)
+		#$AnimationPlayer.play("Death")
+		#yield($AnimationPlayer, "animation_finished")
+		
+		#get_tree().change_scene("res://Worlds/GameOver.tscn")
 		

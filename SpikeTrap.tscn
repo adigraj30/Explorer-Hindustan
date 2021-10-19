@@ -35,7 +35,9 @@ tracks/1/keys = {
 "values": [ true, false, true ]
 }
 
-[node name="SpikeTrap" type="Area2D"]
+[node name="SpikeTrap" type="Area2D" groups=[
+"SpikeTrap",
+]]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
