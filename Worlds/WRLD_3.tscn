@@ -70,7 +70,7 @@ texture = ExtResource( 5 )
 position = Vector2( 32, 93 )
 
 [node name="Monkey" parent="." instance=ExtResource( 4 )]
-position = Vector2( -147, 159 )
+position = Vector2( -77, 0 )
 
 [node name="Monkey2" parent="." instance=ExtResource( 4 )]
 position = Vector2( -205, 162 )
@@ -98,3 +98,11 @@ rotation = -3.14159
 [node name="Monkey2" parent="SpikeTrap" instance=ExtResource( 4 )]
 position = Vector2( 173, 72.0008 )
 rotation = -3.14159
+
+[node name="SpikeTrap2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -37, 376 )
+rotation = 3.14124
+
+[node name="SpikeTrap3" parent="." instance=ExtResource( 6 )]
+position = Vector2( -86, 376 )
+rotation = 3.14124

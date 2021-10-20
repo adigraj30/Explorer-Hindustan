@@ -254,7 +254,7 @@ shape = SubResource( 1 )
 texture = ExtResource( 3 )
 hframes = 7
 vframes = 11
-frame = 65
+frame = 43
 
 [node name="SwordAttack" type="Area2D" parent="Sprite"]
 script = ExtResource( 2 )
