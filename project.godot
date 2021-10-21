@@ -17,6 +17,11 @@ _global_script_class_icons={
 config/name="Explorer - Hindustan"
 config/icon="res://Sprites/NotUsing/icon.png"
 
+[autoload]
+
+PlayerStats="*res://Worlds/Player_stats.gd"
+UserInterface="*res://Worlds/UserInterface.tscn"
+
 [display]
 
 window/size/width=320

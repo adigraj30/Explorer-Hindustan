@@ -137,3 +137,26 @@ rotation = -3.13932
 
 [node name="Area2D" parent="Area2D" instance=ExtResource( 14 )]
 position = Vector2( 17, -3.05176e-05 )
+
+[node name="SpikeTrap" parent="." instance=ExtResource( 14 )]
+position = Vector2( 168, 379 )
+rotation = 3.14072
+
+[node name="SpikeTrap2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 184, 379 )
+rotation = 3.14072
+
+[node name="SpikeTrap3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 232, 379 )
+rotation = 3.14072
+
+[node name="SpikeTrap4" parent="." instance=ExtResource( 14 )]
+position = Vector2( 248, 379 )
+rotation = 3.14072
+
+[node name="SpikeTrap5" parent="." instance=ExtResource( 14 )]
+position = Vector2( 55, 379 )
+rotation = 3.14072
+
+[node name="SpikeTrap" parent="SpikeTrap5" instance=ExtResource( 14 )]
+position = Vector2( 16, 0 )

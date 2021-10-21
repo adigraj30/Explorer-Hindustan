@@ -4,6 +4,8 @@ export (int) var speed  = 120
 export (int) var jump_speed = -180
 export (int) var gravity = 400
 
+export (int) var health := 1000
+
 
 var velocity = Vector2.ZERO
 
