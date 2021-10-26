@@ -107,15 +107,22 @@ func _physics_process(delta):
 	update_animation()
 		
 		
+
+func _process(delta):
 	
+	
+	if PlayerStats.health <=0:
+		dead()
+		PlayerStats.reset()
+
 		
 		
 	
 
 
-func _on_Area2D_body_entered(body):
-	if body.is_in_group("Monkey"):
-		$AnimationPlayer.play("Dead")
+#func _on_Area2D_body_entered(body):
+#	if body.is_in_group("Monkey"):
+#		$AnimationPlayer.play("Dead")
 
 
 func _on_SwordAttack_area_entered(area):
@@ -132,17 +139,21 @@ func _on_SwordAttack_area_entered(area):
 		
 
 func dead():
+		
 	print("you are dead...")
 	set_physics_process(false)
 	$AnimationPlayer.play("Death")
 	yield($AnimationPlayer,"animation_finished") 
-	#I CAN ADD LIFE REDUCTION HERE
+	#PlayerStats.change_lives = -1#I CAN ADD LIFE REDUCTION HERE
 	get_tree().change_scene("res://Worlds/GameOver.tscn")
+	
 	
 func _on_DeathZone_body_entered(body):
 	
 	if body.is_in_group("Monkey"):
-		dead()
+		PlayerStats.change_health(-20)
+		
+		#dead()
 		
 	
 		
@@ -151,3 +162,4 @@ func _on_DeathZone_body_entered(body):
 func _on_DeathZone_area_entered(area):
 	if area.is_in_group("SpikeTrap"):
 		dead()
+

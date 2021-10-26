@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/UI/textures-2d-pixel-heart-1_800x.png" type="Texture" id=1]
-[ext_resource path="res://UserInterface.gd" type="Script" id=2]
+[ext_resource path="res://Worlds/UserInterface.gd" type="Script" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.847059, 0.223529, 0.223529, 1 )
@@ -17,7 +17,9 @@ bg_color = Color( 0, 0, 0, 0.345098 )
 border_color = Color( 0.796078, 0.737255, 0.737255, 1 )
 corner_radius_top_right = 1024
 
-[node name="UserInterface" type="Control"]
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="UserInterface" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -1.0
@@ -27,7 +29,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HealthBar" type="ProgressBar" parent="."]
+[node name="HealthBar" type="ProgressBar" parent="UserInterface"]
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 100.0
@@ -40,7 +42,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LifeCounter" type="Label" parent="."]
+[node name="LifeCounter" type="Label" parent="UserInterface"]
 margin_left = 288.0
 margin_top = 4.0
 margin_right = 328.0
@@ -50,7 +52,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LifeCounterPicture" type="TextureRect" parent="LifeCounter"]
+[node name="LifeCounterPicture" type="TextureRect" parent="UserInterface/LifeCounter"]
 margin_left = -30.9999
 margin_top = -2.0
 margin_right = 769.0
