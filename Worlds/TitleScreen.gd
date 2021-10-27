@@ -4,7 +4,12 @@ extends Node2D
 
 
 func _ready():
+	UserInterface.hide()
+	
 	pass
+	
+	
+		
 	
 	
 func _physics_process(delta):

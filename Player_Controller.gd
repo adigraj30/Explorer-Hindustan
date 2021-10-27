@@ -144,10 +144,15 @@ func dead():
 	set_physics_process(false)
 	$AnimationPlayer.play("Death")
 	yield($AnimationPlayer,"animation_finished") 
-	#PlayerStats.change_lives = -1#I CAN ADD LIFE REDUCTION HERE
-	get_tree().change_scene("res://Worlds/GameOver.tscn")
 	
+	if PlayerStats.lives <=0:
+		get_tree().change_scene("res://Worlds/GameOver.tscn")
+		
+		
+	else:
+		PlayerStats.player_reset()
 	
+
 func _on_DeathZone_body_entered(body):
 	
 	if body.is_in_group("Monkey"):
