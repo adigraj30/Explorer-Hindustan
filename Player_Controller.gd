@@ -145,7 +145,7 @@ func dead():
 	$AnimationPlayer.play("Death")
 	yield($AnimationPlayer,"animation_finished") 
 	
-	if PlayerStats.lives <=0:
+	if PlayerStats.lives <=1:
 		get_tree().change_scene("res://Worlds/GameOver.tscn")
 		
 		

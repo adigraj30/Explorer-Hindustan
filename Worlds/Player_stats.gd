@@ -9,11 +9,17 @@ var lives_max
 
 func reset():
 	health = health_max
+	
+	
+func reset_everything():
+	health = health_max
 	lives = lives_max
+	
 	
 	
 
 func player_reset():
+	
 	health = 100
 	change_lives(-1)
 	get_tree().reload_current_scene()
