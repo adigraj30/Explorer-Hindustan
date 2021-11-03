@@ -97,7 +97,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_released("attack"):
 		player_state = state.IDLE
-		
+		$Sprite/SwordAttack/CollisionShape2D.disabled = true # this makes sure the collision shape is disabled once attack is not pressed.
 	#if Input.is_action_pressed("attack"):
 		#player_state = state.IDLE
 	
@@ -158,6 +158,9 @@ func _on_DeathZone_body_entered(body):
 	if body.is_in_group("Monkey"):
 		PlayerStats.change_health(-20)
 		
+	if body.is_in_group("DeathBar"):
+		dead()
+		
 		#dead()
 		
 	
@@ -165,6 +168,10 @@ func _on_DeathZone_body_entered(body):
 
 
 func _on_DeathZone_area_entered(area):
+	
 	if area.is_in_group("SpikeTrap"):
+		dead()
+	
+	if area.is_in_group("DeathBar"):
 		dead()
 

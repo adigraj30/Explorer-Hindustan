@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Sprites/Assets/Background items/Grassy_Mountains_Parallax_Background-vnitti/layers/hill.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Assets/Background items/Grassy_Mountains_Parallax_Background-vnitti/layers/sky.png" type="Texture" id=13]
 [ext_resource path="res://SpikeTrap.tscn" type="PackedScene" id=14]
+[ext_resource path="res://DeathBar.tscn" type="PackedScene" id=15]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 13.3849
@@ -129,7 +130,7 @@ shape = SubResource( 1 )
 [node name="Player" parent="." groups=[
 "Player",
 ] instance=ExtResource( 2 )]
-position = Vector2( 43, 64 )
+position = Vector2( 73, 82 )
 
 [node name="Area2D" parent="." instance=ExtResource( 14 )]
 position = Vector2( 121, 379 )
@@ -160,3 +161,6 @@ rotation = 3.14072
 
 [node name="SpikeTrap" parent="SpikeTrap5" instance=ExtResource( 14 )]
 position = Vector2( 16, 0 )
+
+[node name="DeathBar" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1, 512 )

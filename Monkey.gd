@@ -10,7 +10,7 @@ var direction = 1
 
 var is_dead = false 
 
-export (int) var health := 30 #using export var so it can be easily be changed in the editor
+export (int) var health := 20 #using export var so it can be easily be changed in the editor
 
 func _ready():
 	pass # Replace with function body.

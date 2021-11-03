@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Sprites/Assets/Background items/32x32 caveentrance.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Assets/Background items/cavebackgroundpurple.JPG" type="Texture" id=5]
 [ext_resource path="res://Worlds/Entrance_2.gd" type="Script" id=6]
+[ext_resource path="res://DeathBar.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 14.0
@@ -14,8 +15,8 @@ height = 16.0
 [node name="WRLD_2" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 82, 146 )
-scale = Vector2( 16.0652, 12.4919 )
+position = Vector2( -3.8147e-06, 1.52588e-05 )
+scale = Vector2( 913.104, 476.73 )
 texture = ExtResource( 5 )
 
 [node name="Baackgroiund" type="TileMap" parent="."]
@@ -59,3 +60,6 @@ position = Vector2( -52, 109 )
 
 [node name="Monkey2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 142.841, 94.7678 )
+
+[node name="Death Bar" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, 1526 )

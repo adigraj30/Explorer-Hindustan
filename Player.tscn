@@ -5,7 +5,7 @@
 [ext_resource path="res://Sprites/Characters/adventurer-Sheet blue.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7, 6 )
+extents = Vector2( 7, 11 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10.3799, 12 )
@@ -307,14 +307,13 @@ height = 12.0
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -2, 11 )
+position = Vector2( 0, 6 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
 hframes = 7
 vframes = 11
-frame = 24
 
 [node name="SwordAttack" type="Area2D" parent="Sprite"]
 script = ExtResource( 2 )
