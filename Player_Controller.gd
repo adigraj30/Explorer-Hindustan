@@ -61,7 +61,7 @@ func _physics_process(delta):
 	if player_state != state.SLIDING and player_state != state.ATTACK:
 		get_input()
 		
-		print(velocity)
+
 		
 		if velocity.x == 0:
 			velocity.x = 0
@@ -139,7 +139,8 @@ func _on_SwordAttack_area_entered(area):
 		
 
 func dead():
-		
+	if $AnimationPlayer.current_animation == "Death": #this makes sure that death does not happen twice if landed on two spikes
+		return
 	print("you are dead...")
 	set_physics_process(false)
 	$AnimationPlayer.play("Death")
@@ -172,6 +173,7 @@ func _on_DeathZone_area_entered(area):
 	if area.is_in_group("SpikeTrap"):
 		dead()
 	
-	if area.is_in_group("DeathBar"):
+	
+	elif area.is_in_group("DeathBar"):
 		dead()
 
