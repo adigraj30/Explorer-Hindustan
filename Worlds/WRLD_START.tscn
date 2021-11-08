@@ -1,18 +1,11 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Worlds/Area2D.gd" type="Script" id=3]
 [ext_resource path="res://Worlds/WRLD_START.gd" type="Script" id=4]
-[ext_resource path="res://Sprites/Assets/Background items/Grassy_Mountains_Parallax_Background-vnitti/layers/far_mountains.png" type="Texture" id=5]
+[ext_resource path="res://ParallaxBackground_outside.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/Assets/Background items/32x32 caveentrance.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Assets/Background items/Grassy_Mountains_Parallax_Background-vnitti/layers/clouds_front.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Assets/Background items/Grassy_Mountains_Parallax_Background-vnitti/layers/clouds_mid.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Assets/Background items/Grassy_Mountains_Parallax_Background-vnitti/layers/grassy_mountains.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Assets/Background items/Grassy_Mountains_Parallax_Background-vnitti/layers/clouds_mid_t.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Assets/Background items/Grassy_Mountains_Parallax_Background-vnitti/layers/clouds_front_t.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Assets/Background items/Grassy_Mountains_Parallax_Background-vnitti/layers/hill.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/Assets/Background items/Grassy_Mountains_Parallax_Background-vnitti/layers/sky.png" type="Texture" id=13]
 [ext_resource path="res://SpikeTrap.tscn" type="PackedScene" id=14]
 [ext_resource path="res://DeathBar.tscn" type="PackedScene" id=15]
 
@@ -43,78 +36,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0, 1 )
-motion_mirroring = Vector2( 768, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Sky"]
-position = Vector2( 140, 50 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 13 )
-
-[node name="Far_Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.2, 1 )
-motion_mirroring = Vector2( 768, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Far_Mountains"]
-position = Vector2( 140, 50 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 5 )
-
-[node name="Grassy_mountains" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.4, 1 )
-motion_mirroring = Vector2( 768, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Grassy_mountains"]
-position = Vector2( 140, 50 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 9 )
-
-[node name="Clouds_mid_t" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.6, 1 )
-motion_mirroring = Vector2( 768, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Clouds_mid_t"]
-position = Vector2( 140, 50 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 10 )
-
-[node name="Clouds_mid" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.7, 1 )
-motion_mirroring = Vector2( 768, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Clouds_mid"]
-position = Vector2( 140, 50 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 8 )
-
-[node name="Hill" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
-motion_scale = Vector2( 0.8, 1 )
-motion_mirroring = Vector2( 768, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Hill"]
-position = Vector2( 140, 50 )
-texture = ExtResource( 12 )
-
-[node name="Clouds_front_t" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.9, 1 )
-motion_mirroring = Vector2( 768, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Clouds_front_t"]
-position = Vector2( 140, 50 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 11 )
-
-[node name="Clouds_front" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 768, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Clouds_front"]
-position = Vector2( 140, 50 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 7 )
+[node name="ParallaxBackground" parent="." instance=ExtResource( 5 )]
 
 [node name="Entrance_1" type="Area2D" parent="."]
 position = Vector2( -55.1544, 352.139 )
@@ -127,9 +49,7 @@ texture = ExtResource( 6 )
 position = Vector2( 0, 11.3589 )
 shape = SubResource( 1 )
 
-[node name="Player" parent="." groups=[
-"Player",
-] instance=ExtResource( 2 )]
+[node name="Player" parent="." groups=["Player"] instance=ExtResource( 2 )]
 position = Vector2( 73, 82 )
 
 [node name="Area2D" parent="." instance=ExtResource( 14 )]

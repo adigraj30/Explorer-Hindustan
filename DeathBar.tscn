@@ -3,12 +3,8 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1646, 38 )
 
-[node name="Death Bar" type="Area2D" groups=[
-"DeathBar",
-]]
+[node name="Death Bar" type="Area2D" groups=["DeathBar"]]
 position = Vector2( 0, -2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
-"DeathBar",
-]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["DeathBar"]]
 shape = SubResource( 1 )

@@ -8,7 +8,6 @@ extents = Vector2( 8, 8 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "SpikeTrigger"
-length = 5.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -37,9 +36,7 @@ tracks/1/keys = {
 
 [sub_resource type="CircleShape2D" id=3]
 
-[node name="SpikeTrap" type="Area2D" groups=[
-"SpikeTrap",
-]]
+[node name="SpikeTrap" type="Area2D" groups=["SpikeTrap"]]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
