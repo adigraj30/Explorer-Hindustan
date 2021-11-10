@@ -1,6 +1,7 @@
 extends Node2D
 
-
+func _ready():
+	UserInterface.hidemenu()
 
 
 func _on_TextureButton1_pressed():

@@ -15,6 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Explorer - Hindustan"
+run/main_scene="res://Worlds/TitleScreen.tscn"
 config/icon="res://Sprites/NotUsing/icon.png"
 
 [autoload]
