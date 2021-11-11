@@ -9,7 +9,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("hello") # Replace with function body.
+	
 	UserInterface.showmenu()
 
 

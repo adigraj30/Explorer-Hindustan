@@ -17,7 +17,7 @@ motion_mirroring = Vector2( 768, 0 )
 
 [node name="Sprite" type="Sprite" parent="Sky"]
 position = Vector2( 140, 50 )
-scale = Vector2( 4, 4 )
+scale = Vector2( 4, 5.36 )
 texture = ExtResource( 4 )
 
 [node name="Far_Mountains" type="ParallaxLayer" parent="."]

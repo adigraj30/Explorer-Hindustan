@@ -68,7 +68,7 @@ func _physics_process(delta):
 			player_state = state.IDLE
 		elif velocity.x != 0 and Input.is_action_just_pressed("ui_down"):
 			player_state = state.SLIDING	
-			velocity.x *= 2 
+			velocity.x *= 2
 		elif velocity.x != 0:
 			player_state = state.RUNNING
 		
@@ -101,7 +101,7 @@ func _physics_process(delta):
 	#if Input.is_action_pressed("attack"):
 		#player_state = state.IDLE
 	
-	velocity.y += gravity * delta #adds gravity
+	velocity.y += gravity * delta #this adds gravity
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	update_animation()

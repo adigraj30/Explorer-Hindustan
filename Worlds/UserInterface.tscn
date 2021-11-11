@@ -18,15 +18,15 @@ bg_color = Color( 0.819608, 0.611765, 0.611765, 0.345098 )
 border_color = Color( 0.796078, 0.737255, 0.737255, 1 )
 corner_radius_top_right = 1024
 
-[node name="UserInterface" type="Control"]
+[node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource( 2 )
+
+[node name="UserInterface" type="Control" parent="."]
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HealthBar" type="ProgressBar" parent="CanvasLayer"]
+[node name="HealthBar" type="ProgressBar" parent="UserInterface"]
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 100.0
@@ -39,7 +39,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LifeCounter" type="Label" parent="CanvasLayer"]
+[node name="LifeCounter" type="Label" parent="UserInterface"]
 margin_left = 288.0
 margin_top = 4.0
 margin_right = 328.0
@@ -49,7 +49,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LifeCounterPicture" type="TextureRect" parent="CanvasLayer/LifeCounter"]
+[node name="LifeCounterPicture" type="TextureRect" parent="UserInterface/LifeCounter"]
 margin_left = -30.9999
 margin_top = -2.0
 margin_right = 769.0

@@ -1,19 +1,18 @@
-extends Control
+extends CanvasLayer
 
 
 func _ready():
-	
-	$CanvasLayer/HealthBar.max_value = PlayerStats.health_max
+	$UserInterface/HealthBar.max_value = PlayerStats.health_max
 	
 
 func _process(delta):
-	$CanvasLayer/HealthBar.value = PlayerStats.get_health()
-	$CanvasLayer/LifeCounter.text = PlayerStats.get_lives()
+	$UserInterface/HealthBar.value = PlayerStats.get_health()
+	$UserInterface/LifeCounter.text = PlayerStats.get_lives()
 
 
 func hidemenu():
-	hide()
+	$UserInterface.hide()
 	
 func showmenu():
-	show()
+	$UserInterface.show()
 
