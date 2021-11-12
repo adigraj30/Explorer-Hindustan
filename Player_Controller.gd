@@ -6,13 +6,14 @@ export (int) var gravity = 400
 
 export (int) var health := 1000
 
+var check_roof = false
 
 var velocity = Vector2.ZERO
 
 export (float,0,1,0) var friction = 10
 export (float,0,1,0) var acceleration = 25
 
-enum state {IDLE, RUNNING, SLIDING, JUMP, FALL, ATTACK, DEATH}
+enum state {IDLE, RUNNING, SLIDING, JUMP, FALL, ATTACK, DEATH, SLIDE_END}
 
 var player_state = state.IDLE
 
@@ -29,6 +30,7 @@ func get_input():
 		
 
 func update_animation():
+	
 	if velocity.x < 0 :
 		$Sprite.flip_h = true
 		$Sprite/SwordAttack/CollisionShape2D.position.x = -16
@@ -42,9 +44,15 @@ func update_animation():
 		state.RUNNING:
 			$AnimationPlayer.play("Running")		
 		state.SLIDING:
+			check_roof = false
 			$AnimationPlayer.play("Sliding")
-			yield($AnimationPlayer, "animation_finished")
-			player_state = state.IDLE	
+			yield(get_tree().create_timer(.5),"timeout")
+			check_roof = true
+			#player_state = state.IDLE
+		state.SLIDE_END:
+			$AnimationPlayer.play("SlideEnd")
+			yield($AnimationPlayer,"animation_finished")
+			player_state = state.IDLE
 		state.JUMP:
 			$AnimationPlayer.play("Jump")
 		state.FALL:
@@ -58,6 +66,11 @@ func update_animation():
 
 		
 func _physics_process(delta):
+	
+	if player_state == state.SLIDING and check_roof:
+		if not $RoofChecker.is_colliding():
+			print("safe")
+			player_state = state.SLIDE_END
 	if player_state != state.SLIDING and player_state != state.ATTACK:
 		get_input()
 		
