@@ -50,7 +50,7 @@ position = Vector2( 0, 11.3589 )
 shape = SubResource( 1 )
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource( 2 )]
-position = Vector2( 1102, 208 )
+position = Vector2( 46, 90 )
 
 [node name="Area2D" parent="." instance=ExtResource( 14 )]
 position = Vector2( 121, 379 )

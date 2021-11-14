@@ -1,6 +1,6 @@
 extends Node
 
-var health
+var health #making variables for all the important thigs i will need.
 var health_max
 
 var lives
@@ -26,16 +26,16 @@ func player_reset():
 	
 	
 func _ready():
-	health = 100
-	health_max = 100
+	health = 100 #the player starts with 100 health
+	health_max = 100 #if i had more time, i could have made max helath like 200 and added helath kits throughout the levels
 	
-	lives = 3
-	lives_max = 3
+	lives = 3 #the player starts with 3 lives
+	lives_max = 3 #if i had more time, i could have made max lives like 5, and added hearts to collect throughout the game.
 	
 
 func change_health(amount):
 	health += amount 
-	health = clamp(health, 0, health_max)
+	health = clamp(health, 0, health_max) #this allows the health to change, which i used in the player code to change the health when coming in touch with enemies or the deathbar or spikes.
 	
 func get_health():
 	return health

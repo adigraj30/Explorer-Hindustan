@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+###THIS WAS CANCELLED###
+
+
 
 export var SPEED = 300
 var moving = false

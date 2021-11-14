@@ -4,7 +4,7 @@ extends Node2D
 
 
 func _ready():
-	UserInterface.hidemenu()
+	UserInterface.hidemenu() #This hides the user interface. helath and lives, when the player not in the "game levels". This makes the game more professional.
 	
 
 	
