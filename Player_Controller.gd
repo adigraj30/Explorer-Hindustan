@@ -27,7 +27,7 @@ func get_input():
 	else:
 		
 		velocity.x = move_toward(velocity.x, 0, friction)
-		#this is the simple movement code for the player, one of the first things I actually coded for. It uses the godot code like "ui_left" which means that left arrow key, which means that player will move left when the key is pressed. 
+		#this is the simple movement code for the player,  one of the first things I actually coded for. It uses the godot code like "ui_left" which means that left arrow key, which means that player will move left when the key is pressed. 
 
 func update_animation(): #This code is very important as it essentially controls all the player animation, which are very important for the game. 
 	
